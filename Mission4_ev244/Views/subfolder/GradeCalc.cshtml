@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model GradeCalcModel;
+    ViewData["Title"] = "Grade Calculator";
+}
+
+<!-- Calculates Grade based on percentages inputted without the % sign and prints letter grade along with final % -->
+<h2>Grade Calculator</h2>
+<h6>Do not include the % sign</h6>
+<form method="post">
+    <label>Assignments:</label>
+    <input id="assignments" asp-for="Assignments" /><br />  @*asp-for gotta match exactly the variable names in the model.cs*@
+    <label>Group Project:</label>
+    <input id="projects" asp-for="Projects" /><br />
+    <label>Quizzes:</label>
+    <input id="quizzes" asp-for="Quizzes" /><br />
+    <label>Midterm Exam:</label>
+    <input id="midterm" asp-for="Midterm" /><br />
+    <label>Final Exam:</label>
+    <input id="final" asp-for="Final" /><br />
+    <label>Intex:</label>
+    <input id="intex" asp-for="Intex" /><br />
+
+    <button id="submit" type="submit">Submit</button>
+
+    <div asp-validation-summary="All"></div>
+</form>
+
+@*puts data from js file into the html to display results*@
+<div>
+    Class Grade:
+    <span id="grade">
+
+    </span>
+</div>
+
+
